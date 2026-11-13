@@ -125,11 +125,30 @@ button,input,select,textarea{font-family:inherit}
 .fxbox .seg{background:var(--panel)}
 .fxbox .seg button.on{background:var(--soft)}
 .fxbox .pt{font-size:13px}
+.dtabs{display:flex;gap:3px;background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:3px;position:sticky;top:-14px;z-index:2;margin-top:-2px}
+.dtabs button{flex:1;border:0;background:none;padding:7px 2px;border-radius:7px;font-size:12.5px;color:var(--mute);cursor:pointer;font-weight:700;white-space:nowrap}
+.dtabs button.on{background:var(--panel);color:var(--accent);box-shadow:0 1px 3px rgba(0,0,0,.15)}
+.rng{display:flex;align-items:center;gap:10px}
+.rng input{flex:1;min-width:0;accent-color:var(--accent)}
+.rng b{min-width:46px;text-align:right;font-size:12.5px;font-variant-numeric:tabular-nums}
+.themes{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.thm{border:2px solid var(--line);border-radius:12px;padding:0;overflow:hidden;background:var(--panel);cursor:pointer;text-align:left;color:var(--ink);display:flex;flex-direction:column}
+.thm:hover{border-color:var(--accent)}
+.thm.on{border-color:var(--accent);box-shadow:0 0 0 2px var(--soft)}
+.thm-v{height:70px;padding:9px;display:flex;flex-direction:column;gap:6px}
+.thm-v i{display:block;height:7px;border-radius:4px;width:55%}
+.thm-v .c{flex:1;display:block}
+.thm-v .bt{width:40%;height:13px}
+.thm b{display:block;font-size:12.5px;padding:6px 9px 7px}
+.pchk{display:flex;align-items:center;gap:8px;padding:6px 12px;border:1.5px dashed var(--line);border-radius:999px;cursor:pointer;font-size:13px;font-weight:700;margin-left:auto}
+.pchk:has(input:checked){border-style:solid;border-color:var(--accent);background:var(--soft);color:var(--accent)}
+.pchk input{width:16px;height:16px;accent-color:var(--accent);margin:0}
+.pchk small{color:var(--mute);font-weight:400;font-size:12px}
 
 /* ---------- 학생이 만드는 페이지 ---------- */
-.page{--p-s:20px;--p-m:44px;--p-l:76px;--px:48px;flex:0 1 860px;min-width:0;position:relative;font-family:var(--bf);background:var(--sbg);color:var(--sfg);line-height:1.6;font-size:16px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 14px 44px rgba(0,0,0,.16)}
+.page{--p-s:calc(20px * var(--sp,1));--p-m:calc(44px * var(--sp,1));--p-l:calc(76px * var(--sp,1));--px:48px;flex:0 1 860px;min-width:0;position:relative;font-family:var(--bf);background:var(--sbg);color:var(--sfg);line-height:1.6;font-size:16px;box-shadow:0 1px 2px rgba(0,0,0,.08),0 14px 44px rgba(0,0,0,.16)}
 .view-m .page{flex-basis:390px}
-.page.narrow{--p-s:14px;--p-m:30px;--p-l:48px;--px:18px;font-size:15px}
+.page.narrow{--p-s:calc(14px * var(--sp,1));--p-m:calc(30px * var(--sp,1));--p-l:calc(48px * var(--sp,1));--px:18px;font-size:15px}
 .page .blk{position:relative;background:var(--bgc);color:var(--fg);padding:var(--py) var(--px)}
 .page [data-f]{outline:none;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;min-width:1ch;cursor:text}
 .page [data-f]:empty::before{content:attr(data-ph);opacity:.45}
@@ -140,12 +159,14 @@ button,input,select,textarea{font-family:inherit}
 .page .p{margin:0;line-height:1.75;max-width:44em}
 .page .a-left{text-align:left}.page .a-center{text-align:center}.page .a-right{text-align:right}
 .page .p.a-center{margin-inline:auto}.page .p.a-right{margin-left:auto}
-.page .hs-s{font-size:26px}.page .hs-m{font-size:34px}.page .hs-l{font-size:46px}
-.page.narrow .hs-s{font-size:21px}.page.narrow .hs-m{font-size:27px}.page.narrow .hs-l{font-size:34px}
-.page .sz-s{font-size:15px}.page .sz-m{font-size:18px}.page .sz-l{font-size:22px}
-.page.narrow .sz-s{font-size:14px}.page.narrow .sz-m{font-size:16px}.page.narrow .sz-l{font-size:19px}
+.page .hs-s{font-size:calc(26px * var(--hs,1))}.page .hs-m{font-size:calc(34px * var(--hs,1))}.page .hs-l{font-size:calc(46px * var(--hs,1))}
+.page.narrow .hs-s{font-size:calc(21px * var(--hs,1))}.page.narrow .hs-m{font-size:calc(27px * var(--hs,1))}.page.narrow .hs-l{font-size:calc(34px * var(--hs,1))}
+.page .sz-s{font-size:calc(15px * var(--bs,1))}.page .sz-m{font-size:calc(18px * var(--bs,1))}.page .sz-l{font-size:calc(22px * var(--bs,1))}
+.page.narrow .sz-s{font-size:calc(14px * var(--bs,1))}.page.narrow .sz-m{font-size:calc(16px * var(--bs,1))}.page.narrow .sz-l{font-size:calc(19px * var(--bs,1))}
 .page .btn{display:inline-block;padding:12px 24px;border-radius:var(--br);font-weight:700;font-size:16px;line-height:1.3;background:var(--bt-b);color:var(--bt-f);border:2px solid var(--bt-b);white-space:nowrap}
-.page .btn.line{background:transparent;color:var(--bt-b)}
+.page .btn.line,.page.btn-line .btn{background:transparent;color:var(--bt-b)}
+.page.btn-soft .btn{background:var(--bt-soft);border-color:var(--bt-soft);color:var(--bt-sf)}
+.page.btn-soft .btn.line{background:transparent;border-color:var(--bt-b);color:var(--bt-b)}
 .page .btn.sm{padding:7px 14px;font-size:14px}
 .page .btn.wide{display:block;text-align:center}
 .page .btnrow{display:flex}
@@ -169,21 +190,21 @@ button,input,select,textarea{font-family:inherit}
 .page .hero-in{width:100%;display:flex;flex-direction:column;gap:16px}
 .page .hero-in.a-left{align-items:flex-start;text-align:left}
 .page .hero-in.a-center{align-items:center;text-align:center}
-.page .h1{font-size:52px}.page.narrow .h1{font-size:33px}
-.page .sub{margin:0;font-size:19px;opacity:.9;max-width:30em}
+.page .h1{font-size:calc(52px * var(--hs,1))}.page.narrow .h1{font-size:calc(33px * var(--hs,1))}
+.page .sub{margin:0;font-size:calc(19px * var(--bs,1));opacity:.9;max-width:30em}
 .page.narrow .sub{font-size:16px}
 
 .page .cards{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:20px}
 .page.narrow .cards{grid-template-columns:1fr}
-.page .card{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
-.page .card-b{padding:18px 20px 22px;display:flex;flex-direction:column;gap:8px}
-.page .card h3{font-size:20px}
-.page .card p{margin:0;font-size:15px;color:var(--mute);line-height:1.65}
+.page .card{background:var(--card);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column;border:var(--cbw,0px) solid var(--line);box-shadow:var(--csh,none)}
+.page .card-b{padding:calc(18px * var(--cp,1)) calc(20px * var(--cp,1)) calc(22px * var(--cp,1));display:flex;flex-direction:column;gap:8px}
+.page .card h3{font-size:calc(20px * var(--hs,1))}
+.page .card p{margin:0;font-size:calc(15px * var(--bs,1));color:var(--mute);line-height:1.65}
 .page .it{display:grid;grid-template-columns:1fr 1fr;gap:36px;align-items:center}
 .page .it.flip .slot{order:2}
 .page .it-t{display:flex;flex-direction:column;gap:12px}
-.page .it-t h3{font-size:28px}
-.page .it-t p{margin:0;color:var(--mute);line-height:1.75}
+.page .it-t h3{font-size:calc(28px * var(--hs,1))}
+.page .it-t p{margin:0;color:var(--mute);line-height:1.75;font-size:calc(16px * var(--bs,1))}
 .page.narrow .it{grid-template-columns:1fr;gap:20px}
 .page.narrow .it.flip .slot{order:0}
 .page .gal{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));gap:12px}
@@ -199,7 +220,7 @@ button,input,select,textarea{font-family:inherit}
 .page .q{margin:0 auto;max-width:640px}
 .page .q.a-left{margin-inline:0}
 .page .q::before{content:'\201C';display:block;font-family:var(--hf);font-size:72px;line-height:.7;height:34px;color:var(--ac)}
-.page .qt{font-size:26px;line-height:1.45;margin:0}
+.page .qt{font-size:calc(26px * var(--hs,1));line-height:1.45;margin:0}
 .page.narrow .qt{font-size:20px}
 .page .qw{font-size:14px;color:var(--mute);margin-top:14px;font-style:normal}
 .page .dv hr{border:0;border-top:1px solid var(--line);margin:0}
@@ -228,11 +249,11 @@ button,input,select,textarea{font-family:inherit}
 .page .empty{padding:80px 20px;text-align:center;color:#7d8680;font-family:var(--font);line-height:1.8}
 
 /* 학급 기능 블록 */
-.page .fx{max-width:780px;margin:0 auto;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px 24px;display:flex;flex-direction:column;gap:16px}
-.page.narrow .fx{padding:16px}
+.page .fx{max-width:780px;margin:0 auto;background:var(--card);border:var(--cbw,1px) solid var(--line);box-shadow:var(--csh,none);border-radius:var(--r);padding:calc(22px * var(--cp,1)) calc(24px * var(--cp,1));display:flex;flex-direction:column;gap:16px}
+.page.narrow .fx{padding:calc(16px * var(--cp,1))}
 .page .fx-h{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap}
 .page .fx-t{display:flex;flex-direction:column;gap:8px;min-width:0}
-.page .fx-h h3{font-size:23px}
+.page .fx-h h3{font-size:calc(23px * var(--hs,1))}
 .page.narrow .fx-h h3{font-size:20px}
 .page .chips{display:flex;flex-wrap:wrap;gap:6px}
 .page .chip{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid var(--line);color:var(--mute);line-height:1.6;background:var(--bgc2)}
@@ -363,6 +384,7 @@ button,input,select,textarea{font-family:inherit}
 .pv-body.m .page{width:390px;max-width:100%;flex:none;border:10px solid #15181a;border-radius:34px;overflow:hidden;align-self:flex-start}
 .pv .page .blk{padding-inline:max(var(--px),calc((100% - 1080px) / 2))}
 .pv .page [data-f]{cursor:auto}
+.pv .page.sticky .t-nav{position:sticky;top:0;z-index:6}
 .pv .page [data-f]:hover{outline:none}
 .pv .page .card.go{cursor:pointer;transition:transform .15s}
 .pv .page .card.go:hover{transform:translateY(-3px)}
@@ -521,6 +543,9 @@ button,input,select,textarea{font-family:inherit}
 .wz-fields{display:grid;gap:12px}
 .wz-fields label{display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:700;color:var(--mute)}
 .wz-fields .tin{height:42px;font-size:15px;color:var(--ink);font-weight:400}
+.wz-themes{grid-template-columns:repeat(3,minmax(0,1fr));margin-top:2px}
+.wz-themes .thm b{color:var(--ink);font-weight:700}
+@media (max-width:560px){.wz-themes{grid-template-columns:1fr 1fr}}
 .wz-side{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:14px;overflow:auto;min-height:0}
 .wz-sh{display:flex;align-items:baseline;justify-content:space-between;gap:8px}
 .wz-sh b{font-size:15px}
@@ -593,6 +618,7 @@ button,input,select,textarea{font-family:inherit}
       <div class="tabs">
         <button class="tab on" data-tab="block">블록</button>
         <button class="tab" data-tab="pages">페이지</button>
+        <button class="tab" data-tab="design">디자인</button>
         <button class="tab" data-tab="site">사이트</button>
         <button class="ub only-narrow" id="closeSide" aria-label="닫기" style="margin:5px 6px;border:0"><span data-ico="close" data-s="16"></span></button>
       </div>
@@ -786,24 +812,68 @@ const idxOf=id=>curPage().blocks.findIndex(b=>b.id===id);
 const usedPages=()=>S.mode==='multi'?S.pages:[S.pages[0]];
 const loginPage=()=>S.pages.find(p=>p.blocks.some(b=>b.type==='login'));
 
+/* ---------- 디자인 세부 설정 ---------- */
+const SH={none:'none',soft:'0 2px 10px rgba(0,0,0,.08)',strong:'0 12px 30px rgba(0,0,0,.18)'};
+function dsDefault(rad){const R=RAD[rad]||RAD.md;return{r:R.r,br:R.b===999?12:R.b,pill:R.b===999,shadow:'none',border:true,cardBg:'auto',cpad:100,btn:'fill',hsz:100,bsz:100,sp:100,hwt:'normal',sub:'',ink:'',sticky:false}}
+function getDS(){if(!S.ds)S.ds=dsDefault(S.radius||'md');return S.ds}
+const THEMES=[
+ {id:'clean',n:'깔끔한 기본',accent:'#3b5bdb',bg:'#ffffff',hf:'sans',bf:'sans',navBg:'white',ds:{r:12,br:8,pill:false,shadow:'none',border:true,cardBg:'auto',cpad:100,btn:'fill',hsz:100,bsz:100,sp:100,hwt:'normal',sub:'',ink:'',sticky:false}},
+ {id:'pastel',n:'파스텔 교실',accent:'#e64980',bg:'#fffaf3',hf:'jua',bf:'dodum',navBg:'',ds:{r:22,br:12,pill:true,shadow:'soft',border:false,cardBg:'white',cpad:110,btn:'fill',hsz:105,bsz:100,sp:105,hwt:'normal',sub:'#74c0fc',ink:'#3d3a4a',sticky:false}},
+ {id:'paper',n:'종이 노트',accent:'#a4552b',bg:'#fbf7f0',hf:'serif',bf:'sans',navBg:'',ds:{r:2,br:2,pill:false,shadow:'none',border:true,cardBg:'flat',cpad:100,btn:'line',hsz:100,bsz:100,sp:110,hwt:'normal',sub:'#e9c46a',ink:'#3b2f25',sticky:false}},
+ {id:'bold',n:'선명한 대시보드',accent:'#0c8599',bg:'#f1f3f5',hf:'black',bf:'sans',navBg:'white',ds:{r:14,br:10,pill:false,shadow:'strong',border:false,cardBg:'white',cpad:100,btn:'fill',hsz:95,bsz:100,sp:90,hwt:'normal',sub:'#fab005',ink:'',sticky:true}},
+ {id:'night',n:'밤하늘 다크',accent:'#9775fa',bg:'#15171c',hf:'hyeon',bf:'sans',navBg:'',ds:{r:16,br:12,pill:true,shadow:'soft',border:true,cardBg:'auto',cpad:100,btn:'soft',hsz:100,bsz:100,sp:100,hwt:'normal',sub:'#3bc9db',ink:'',sticky:true}},
+ {id:'forest',n:'숲속 초록',accent:'#2f9e44',bg:'#f4f8f1',hf:'dodum',bf:'dodum',navBg:'',ds:{r:18,br:12,pill:false,shadow:'soft',border:false,cardBg:'white',cpad:105,btn:'soft',hsz:100,bsz:105,sp:100,hwt:'normal',sub:'#94d82d',ink:'#22331f',sticky:false}}
+];
+const SUBS=[['#74c0fc','#74c0fc','하늘'],['#ffd43b','#ffd43b','노랑'],['#ff8787','#ff8787','다홍'],['#69db7c','#69db7c','연두'],['#b197fc','#b197fc','라벤더'],['#ffa94d','#ffa94d','살구']];
+const INKS=[['#1c1f26','#1c1f26','먹색'],['#3d3a4a','#3d3a4a','보라빛 먹색'],['#22331f','#22331f','짙은 초록'],['#3b2f25','#3b2f25','갈색'],['#1e3a5f','#1e3a5f','남색']];
+function dsClass(el){const d=getDS();el.classList.toggle('btn-line',d.btn==='line');el.classList.toggle('btn-soft',d.btn==='soft');el.classList.toggle('sticky',!!d.sticky)}
+function applyTheme(id){
+ const t=THEMES.find(x=>x.id===id); if(!t)return;
+ Object.assign(S,{accent:t.accent,bg:t.bg,hf:t.hf,bf:t.bf,theme:t.id}); S.ds=Object.assign({},t.ds); S.nav.bg=t.navBg;
+ commit(); renderPage(); renderPanel(); toast(`[${t.n}] 테마를 적용했어요. 다른 탭에서 세부를 바꿔 보세요.`);
+}
+function designLines(){
+ const d=getDS(), pct=v=>v===100?'기본 크기':v>100?`기본보다 ${v-100}% 크게`:`기본보다 ${100-v}% 작게`, spc=v=>v<90?'촘촘하게':v>110?'넉넉하게':'보통으로';
+ const L=[`- 포인트 색: ${S.accent} (버튼, 지금 보고 있는 메뉴, 강조)`];
+ if(d.sub)L.push(`- 보조색: ${d.sub} (연한 배경 구역, 태그, 두 번째 강조)`);
+ L.push(`- 바탕색: ${S.bg}`);
+ if(d.ink)L.push(`- 기본 글자색: ${d.ink}`);
+ L.push(`- 글꼴: 제목은 Google Fonts의 "${FONTS[S.hf].g}"${d.hwt==='bold'?'(아주 굵게)':''}, 본문은 "${FONTS[S.bf].g}"`);
+ if(d.hsz!==100||d.bsz!==100)L.push(`- 글자 크기: 제목은 ${pct(d.hsz)}, 본문은 ${pct(d.bsz)}`);
+ L.push(`- 카드(정보 상자): 모서리 둥글기 ${d.r}px, ${{none:'그림자 없음',soft:'연한 그림자(box-shadow: 0 2px 10px rgba(0,0,0,.08))',strong:'진한 그림자(box-shadow: 0 12px 30px rgba(0,0,0,.18))'}[d.shadow]}, ${d.border?'1px 얇은 테두리':'테두리 없음'}, 배경은 ${{auto:'바탕보다 살짝 밝거나 어둡게',white:'흰색',tint:'아주 연한 '+(d.sub?'보조색':'포인트색'),flat:'바탕과 같은 색'}[d.cardBg]}, 안쪽 여백은 ${spc(d.cpad)}`);
+ L.push(`- 버튼: ${{fill:'포인트 색으로 꽉 채운 버튼',line:'테두리만 있는 버튼',soft:'연한 포인트 색 배경에 진한 글자 버튼'}[d.btn]}, ${d.pill?'알약 모양(완전히 둥글게)':`모서리 둥글기 ${d.br}px`}`);
+ L.push(`- 여백: 구역(섹션) 위아래 여백은 ${spc(d.sp)}`);
+ if(d.sticky)L.push('- 헤더는 스크롤해도 화면 맨 위에 붙어 있는 고정 헤더(Sticky Header)로 해 줘.');
+ L.push('- 블록마다 적어 둔 배경색도 디자인 이미지처럼 맞춰 줘.');
+ return L;
+}
+
 function bgOf(b){
- const v=b.bg; if(!v)return null; const ac=hex2rgb(S.accent);
+ const v=b.bg; if(!v)return null; const ac=hex2rgb(S.accent), d=getDS();
  if(v==='accent')return ac;
- if(v==='tint')return mix(W,ac,.12);
+ if(v==='sub')return hex2rgb(d.sub||S.accent);
+ if(v==='tint')return d.sub?mix(W,hex2rgb(d.sub),.18):mix(W,ac,.12);
  if(v==='gray')return[241,242,244];
  if(v==='dark')return[29,34,48];
  if(v==='white')return[255,255,255];
  return hex2rgb(v);
 }
 function bv(b){
- const base=hex2rgb(S.bg), ac=hex2rgb(S.accent);
+ const d=getDS(), base=hex2rgb(S.bg), ac=hex2rgb(S.accent), sub=d.sub?hex2rgb(d.sub):ac;
  const bgc=bgOf(b), surf=bgc||base;
  let fg=ratio(surf,D)>=ratio(surf,W)?D:W;
  if(b.type==='hero'&&b.bgsrc&&IMGS[b.bgsrc])fg=W;
  const dark=fg===W;
- const cardc=dark?mix(surf,W,.09):(lum(surf)>.93?mix(surf,[0,0,0],.04):mix(surf,W,.65));
+ if(!dark&&d.ink){const ink=hex2rgb(d.ink);if(ratio(ink,surf)>=4.5)fg=ink}
+ let cardc;
+ if(d.cardBg==='white')cardc=dark?mix(surf,W,.1):W;
+ else if(d.cardBg==='tint')cardc=dark?mix(surf,sub,.22):mix(W,sub,.12);
+ else if(d.cardBg==='flat')cardc=surf;
+ else cardc=dark?mix(surf,W,.09):(lum(surf)>.93?mix(surf,[0,0,0],.04):mix(surf,W,.65));
  let bb=ac; if(ratio(bb,surf)<2.2)bb=fg;
+ const soft=mix(surf,bb,dark?.3:.15);
  return{
+  bs:rgb(soft), bsf:rgb(ratio(bb,soft)>=3?bb:fg),
   bgc:bgc?rgb(bgc):'transparent', bgc2:rgb(cardc), fg:rgb(fg), mute:rgb(mix(surf,fg,.66)), line:rgb(mix(surf,fg,.14)), bd:rgb(mix(surf,fg,.3)),
   card:rgb(cardc), ph:rgb(mix(surf,fg,dark?.15:.07)), bb:rgb(bb), bt:rgb(ratio(bb,D)>=ratio(bb,W)?D:W),
   ac:rgb(ratio(ac,surf)>=2.6?ac:fg), inbg:rgb(dark?mix(surf,W,.07):W), sun:dark?'#ff9a9a':'#d9363e', sat:dark?'#9fbfff':'#2f6fd6'
@@ -866,7 +936,7 @@ const B={
 };
 function blockStyle(b){
  const v=bv(b);
- let st=`--bgc:${v.bgc};--bgc2:${v.bgc2};--fg:${v.fg};--mute:${v.mute};--line:${v.line};--bd:${v.bd};--card:${v.card};--ph:${v.ph};--bt-b:${v.bb};--bt-f:${v.bt};--ac:${v.ac};--inbg:${v.inbg};--sun:${v.sun};--sat:${v.sat};--py:var(--p-${b.pad||'m'});`;
+ let st=`--bt-soft:${v.bs};--bt-sf:${v.bsf};--bgc:${v.bgc};--bgc2:${v.bgc2};--fg:${v.fg};--mute:${v.mute};--line:${v.line};--bd:${v.bd};--card:${v.card};--ph:${v.ph};--bt-b:${v.bb};--bt-f:${v.bt};--ac:${v.ac};--inbg:${v.inbg};--sun:${v.sun};--sat:${v.sat};--py:var(--p-${b.pad||'m'});`;
  if(b.type==='hero'){
   st+=`--hh:${{s:240,m:340,l:460}[b.size]||340}px;`;
   if(b.bgsrc&&IMGS[b.bgsrc])st+=`background-image:linear-gradient(rgba(0,0,0,.42),rgba(0,0,0,.42)),url('${IMGS[b.bgsrc]}');background-size:cover;background-position:center;`;
@@ -875,11 +945,7 @@ function blockStyle(b){
 }
 function blockHTML(b,pg){
  const v=bv(b);
- let st=`--bgc:${v.bgc};--bgc2:${v.bgc2};--fg:${v.fg};--mute:${v.mute};--line:${v.line};--bd:${v.bd};--card:${v.card};--ph:${v.ph};--bt-b:${v.bb};--bt-f:${v.bt};--ac:${v.ac};--inbg:${v.inbg};--sun:${v.sun};--sat:${v.sat};--py:var(--p-${b.pad||'m'});`;
- if(b.type==='hero'){
-  st+=`--hh:${{s:240,m:340,l:460}[b.size]||340}px;`;
-  if(b.bgsrc&&IMGS[b.bgsrc])st+=`background-image:linear-gradient(rgba(0,0,0,.42),rgba(0,0,0,.42)),url('${IMGS[b.bgsrc]}');background-size:cover;background-position:center;`;
- }
+ const st=blockStyle(b);
  const bar=isShared(b)
   ?`<div class="bar ui-only"><span class="bname">${BN[b.type]} · 모든 페이지 공통</span><button type="button" data-bar="hide" title="숨기기" aria-label="숨기기">${ico('eyeoff',16)}</button></div>`
   :`<div class="bar ui-only"><span class="grip" draggable="true" title="끌어서 순서 바꾸기">${ico('grip',16)}</span><span class="bname">${FEAT[b.type]?'기능 · ':''}${BN[b.type]}</span><button type="button" data-bar="up" title="위로" aria-label="위로">${ico('up',16)}</button><button type="button" data-bar="down" title="아래로" aria-label="아래로">${ico('down',16)}</button><button type="button" data-bar="dup" title="복제" aria-label="복제">${ico('copy',16)}</button><button type="button" data-bar="del" title="삭제" aria-label="삭제">${ico('trash',16)}</button></div>`;
@@ -896,8 +962,11 @@ function pageInner(pg,tip){
   (S.showFooter?blockHTML(S.footer,pg):'');
 }
 function applySite(){
- const bg=hex2rgb(S.bg), fg=ratio(bg,D)>=ratio(bg,W)?D:W, R=RAD[S.radius]||RAD.md;
- page.style.cssText=`--sbg:${S.bg};--sfg:${rgb(fg)};--hf:${FONTS[S.hf].css};--bf:${FONTS[S.bf].css};--hw:${FONTS[S.hf].w};--r:${R.r}px;--br:${R.b}px;`;
+ const d=getDS(), bg=hex2rgb(S.bg); let fg=ratio(bg,D)>=ratio(bg,W)?D:W;
+ if(fg===D&&d.ink&&ratio(hex2rgb(d.ink),bg)>=4.5)fg=hex2rgb(d.ink);
+ const hw=d.hwt==='bold'&&FONTS[S.hf].w>=700?900:FONTS[S.hf].w;
+ page.style.cssText=`--sbg:${S.bg};--sfg:${rgb(fg)};--hf:${FONTS[S.hf].css};--bf:${FONTS[S.bf].css};--hw:${hw};--r:${d.r}px;--br:${d.pill?999:d.br}px;--csh:${SH[d.shadow]||'none'};--cbw:${d.border?'1px':'0px'};--cp:${d.cpad/100};--hs:${d.hsz/100};--bs:${d.bsz/100};--sp:${d.sp/100};`;
+ dsClass(page);
  $('#stage').classList.toggle('view-m',S.view==='mobile');
  document.querySelectorAll('[data-view]').forEach(b=>b.classList.toggle('on',b.dataset.view===S.view));
 }
@@ -985,7 +1054,8 @@ function fxCommon(b){
 }
 function bgSw(b){
  const ac=hex2rgb(S.accent);
- const list=[['white','#ffffff','흰색'],['tint',rgb(mix(W,ac,.12)),'연한 포인트색'],['gray','#f1f2f4','연회색'],['accent',S.accent,'포인트색'],['dark','#1d2230','어두운색']];
+ const sub=getDS().sub;
+ const list=[['white','#ffffff','흰색'],['tint',rgb(bgOf({bg:'tint'})),sub?'연한 보조색':'연한 포인트색'],['gray','#f1f2f4','연회색'],['accent',S.accent,'포인트색']].concat(sub?[['sub',sub,'보조색']]:[]).concat([['dark','#1d2230','어두운색']]);
  return swatches('bg',list,b.bg||'',true);
 }
 function blockPanel(){
@@ -1015,11 +1085,7 @@ function sitePanel(){
   row('사이트 이름',`<input class="tin" type="text" data-sitetxt="name" value="${esc(S.name)}">`)+
   row('무엇을 하는 사이트인가요?',`<textarea class="tin ta" data-sitetxt="purpose" placeholder="예: 우리 반 소식을 나누고 투표로 함께 정하는 학급 홈페이지">${esc(S.purpose)}</textarea>`)+
   row('누가 쓰나요?',`<input class="tin" type="text" data-sitetxt="audience" value="${esc(S.audience)}" placeholder="예: 우리 반 학생 25명과 선생님">`)+`</div>`+
-  row('포인트 색 (버튼·강조)',swatches('site.accent',ACCENTS.map(a=>[a[0],a[0],a[1]]),S.accent,false))+
-  row('페이지 바탕색',swatches('site.bg',SBGS.map(a=>[a[0],a[0],a[1]]),S.bg,false))+
-  row('제목 글꼴',fo('hf',Object.keys(FONTS)))+
-  row('본문 글꼴',fo('bf',BODY_FONTS))+
-  row('모서리 모양',seg('site.radius',Object.keys(RAD).map(k=>[k,RAD[k].label]),S.radius))+
+  hint('색·글꼴·카드·버튼 모양은 <b>[디자인]</b> 탭에서 바꿔요.')+
   `<div class="fxbox"><div class="pt">${ico('sync',16)}<span>누구와 쓰나요 · 실시간 연동</span><span class="tagf">프롬프트에 들어가요</span></div>`+
   seg('site.who',[['solo','나 혼자'],['class','학급 아이들과 함께']],S.who||'class')+
   seg('site.sync',[['firebase','실시간 연동 (Firebase)'],['demo','이 기기만 (시연용)']],S.sync||'firebase')+
@@ -1027,9 +1093,42 @@ function sitePanel(){
   tog('site.showNav','메뉴바 (모든 페이지 공통)',S.showNav,'보이기','숨기기')+
   tog('site.showFooter','바닥글 (모든 페이지 공통)',S.showFooter,'보이기','숨기기');
 }
+let dtab='theme';
+const fontSel=(k,keys)=>`<select class="tin" data-site="${k}" aria-label="글꼴">${keys.map(x=>`<option value="${x}" ${S[k]===x?'selected':''}>${FONTS[x].name}</option>`).join('')}</select>`;
+const rng=(k,label,min,max,step,val,unit)=>row(label,`<div class="rng"><input type="range" min="${min}" max="${max}" step="${step}" value="${val}" data-ds="${k}" data-unit="${unit}" aria-label="${label}"><b data-dsv="${k}">${val}${unit}</b></div>`);
+function themeThumb(t,on,attr){
+ const bgD=lum(hex2rgb(t.bg))<.3, card=t.ds.cardBg==='white'?(bgD?'#262a33':'#ffffff'):t.ds.cardBg==='flat'?t.bg:t.ds.cardBg==='tint'?'#eef3ff':(bgD?'#22262e':'#f1f3f5');
+ return `<button type="button" class="thm ${on?'on':''}" ${attr} aria-pressed="${on}"><span class="thm-v" style="background:${t.bg}"><i style="background:${t.accent}"></i><span class="c" style="background:${card};border-radius:${Math.min(t.ds.r,12)}px;${t.ds.border?`border:1px solid ${bgD?'#3a3f48':'#dde1e5'};`:''}${t.ds.shadow!=='none'?'box-shadow:0 3px 8px rgba(0,0,0,.16);':''}"></span><i class="bt" style="background:${t.ds.btn==='line'?'transparent':t.ds.btn==='soft'?t.accent+'33':t.accent};border:2px solid ${t.ds.btn==='soft'?'transparent':t.accent};border-radius:${t.ds.pill?99:t.ds.br}px"></i></span><b>${t.n}</b></button>`;
+}
+function designPanel(){
+ const d=getDS();
+ let h=`<div class="dtabs" role="tablist">${[['theme','테마'],['color','색'],['card','카드·버튼'],['text','글자·여백']].map(t=>`<button type="button" role="tab" aria-selected="${dtab===t[0]}" data-dtab="${t[0]}" class="${dtab===t[0]?'on':''}">${t[1]}</button>`).join('')}</div>`;
+ if(dtab==='theme')h+=`<div class="themes">${THEMES.map(t=>themeThumb(t,S.theme===t.id,`data-theme="${t.id}"`)).join('')}</div>`+hint('테마를 고르면 색·글꼴·카드·버튼이 한 번에 바뀌어요. 그다음 다른 탭에서 원하는 부분만 고쳐 보세요.');
+ if(dtab==='color')h+=row('포인트 색 (버튼·강조)',swatches('site.accent',ACCENTS.map(a=>[a[0],a[0],a[1]]),S.accent,false))+
+  row('보조색 (연한 배경·두 번째 강조)',swatches('ds.sub',SUBS,d.sub||'',true))+
+  row('페이지 바탕색',swatches('site.bg',SBGS.map(a=>[a[0],a[0],a[1]]),S.bg,false))+
+  row('기본 글자색',swatches('ds.ink',INKS,d.ink||'',true))+
+  hint('보조색을 고르면 블록 배경에 <b>보조색</b>이 생기고, 연한 포인트색 배경도 보조색 계열로 바뀌어요. 글자색은 밝은 바탕에서만 적용돼요.');
+ if(dtab==='card')h+=`<div class="fxbox"><div class="pt">${ico('cards',16)}<span>카드 · 정보 상자</span></div>`+
+  rng('r','모서리 둥글기',0,32,1,d.r,'px')+
+  row('그림자',seg('ds.shadow',[['none','없음'],['soft','연하게'],['strong','진하게']],d.shadow))+
+  tog('ds.border','테두리',d.border,'있음','없음')+
+  row('카드 배경',seg('ds.cardBg',[['auto','자동'],['white','흰색'],['tint','연한 색'],['flat','바탕색']],d.cardBg))+
+  rng('cpad','안쪽 여백',70,140,5,d.cpad,'%')+`</div>`+
+  `<div class="fxbox"><div class="pt">${ico('button',16)}<span>버튼</span></div>`+
+  row('버튼 모양',seg('ds.btn',[['fill','채움'],['line','테두리'],['soft','연한 배경']],d.btn))+
+  tog('ds.pill','알약 모양',d.pill,'켜기','끄기')+(d.pill?'':rng('br','버튼 모서리',0,24,1,d.br,'px'))+`</div>`;
+ if(dtab==='text')h+=row('제목 글꼴',fontSel('hf',Object.keys(FONTS)))+row('본문 글꼴',fontSel('bf',BODY_FONTS))+
+  rng('hsz','제목 크기',80,130,5,d.hsz,'%')+rng('bsz','본문 크기',90,120,5,d.bsz,'%')+
+  row('제목 굵기',seg('ds.hwt',[['normal','보통'],['bold','아주 굵게']],d.hwt))+
+  rng('sp','블록 위아래 여백',70,140,5,d.sp,'%')+
+  tog('ds.sticky','고정 헤더 (스크롤해도 메뉴바가 위에)',d.sticky,'켜기','끄기')+
+  hint('제목 굵기는 본고딕·명조처럼 굵기가 여러 개인 글꼴에서만 달라져요. 고정 헤더는 [미리보기]에서 스크롤해 확인하세요.');
+ return h+`<button type="button" class="add" data-dsreset="1">세부 설정을 기본값으로 되돌리기</button>`;
+}
 function renderPanel(){
  document.querySelectorAll('.tab[data-tab]').forEach(t=>t.classList.toggle('on',t.dataset.tab===tab));
- $('#pbody').innerHTML=tab==='site'?sitePanel():tab==='pages'?pagesPanel():blockPanel();
+ $('#pbody').innerHTML=tab==='site'?sitePanel():tab==='pages'?pagesPanel():tab==='design'?designPanel():blockPanel();
 }
 function softPanel(){ if(!$('#side').contains(document.activeElement))renderPanel(); }
 
@@ -1048,6 +1147,8 @@ function setKV(k,v,live){
  if(v==='true')v=true; else if(v==='false')v=false; else if(k==='n')v=+v;
  if(k==='site.mode'){setMode(v);return}
  if(k==='site.who'){S.who=v;S.sync=v==='class'?'firebase':'demo';renderPage();commit();renderPanel();toast(v==='class'?'학급 아이들과 함께 쓰는 사이트예요. 프롬프트에 Firebase SDK 키 설정이 들어가요.':'나 혼자 쓰는 사이트예요. 서버 없이 이 기기에 저장하도록 요청해요.');return}
+ if(k.indexOf('ds.')===0){ getDS()[k.slice(3)]=v; S.theme=''; renderPage(); if(!live){commit();renderPanel()} return; }
+ if(k==='site.accent'||k==='site.bg')S.theme='';
  if(k.indexOf('site.')===0){ S[k.slice(5)]=v; if((k==='site.showNav'&&!v&&selId===S.nav.id)||(k==='site.showFooter'&&!v&&selId===S.footer.id))selId=null; }
  else{ const b=cur(); if(!b)return; b[k]=v; if(k==='n'&&(b.type==='cards'||b.type==='gallery'))fitCount(b); }
  renderPage(); if(!live){commit();renderPanel()}
@@ -1222,6 +1323,9 @@ const pbody=$('#pbody');
 pbody.addEventListener('click',e=>{
  const t=e.target.closest('button'); if(!t)return; const b=cur();
  if(t.dataset.set!==undefined){setKV(t.dataset.set,t.dataset.v);return}
+ if(t.dataset.theme){applyTheme(t.dataset.theme);return}
+ if(t.dataset.dtab){dtab=t.dataset.dtab;renderPanel();return}
+ if(t.dataset.dsreset){S.ds=dsDefault('md');S.theme='';commit();renderPage();renderPanel();toast('디자인 세부 설정을 기본값으로 되돌렸어요.');return}
  if(t.dataset.padd){addPage();return}
  if(t.dataset.pmenu){const p=S.pages.find(x=>x.id===t.dataset.pmenu); if(p){p.inMenu=p.inMenu===false; commit(); renderAll();} return}
  if(t.dataset.pmove!==undefined){const i=+t.dataset.pmove,j=i+(+t.dataset.d); if(j>=0&&j<S.pages.length){const x=S.pages[i];S.pages[i]=S.pages[j];S.pages[j]=x;commit();renderAll()} return}
@@ -1239,12 +1343,13 @@ pbody.addEventListener('input',e=>{
  const t=e.target;
  if(t.dataset.txt!==undefined){const b=cur(); if(b){setP(b,t.dataset.txt,t.dataset.num?(parseInt(t.value,10)||0):t.value); if(t.dataset.txt!=='memo')renderPage()}}
  else if(t.dataset.color){setKV(t.dataset.color,t.value,true)}
+ else if(t.dataset.ds){const v=+t.value;getDS()[t.dataset.ds]=v;S.theme='';const lb=pbody.querySelector(`[data-dsv="${t.dataset.ds}"]`);if(lb)lb.textContent=v+(t.dataset.unit||'');renderPage()}
  else if(t.dataset.pname){const p=S.pages.find(x=>x.id===t.dataset.pname); if(p){p.name=t.value;renderPage();renderPagebar()}}
  else if(t.dataset.sitetxt){S[t.dataset.sitetxt]=t.value}
 });
 pbody.addEventListener('change',e=>{
  const t=e.target;
- if(t.dataset.txt!==undefined||t.dataset.pname||t.dataset.sitetxt)commit();
+ if(t.dataset.txt!==undefined||t.dataset.pname||t.dataset.sitetxt||t.dataset.ds)commit();
  else if(t.dataset.color){commit();renderPanel()}
  else if(t.dataset.site){S[t.dataset.site]=t.value;renderPage();commit()}
 });
@@ -1307,6 +1412,7 @@ function exportPage(pg,width){
  const el=document.createElement('div');
  el.className='page exp'+(width<640?' narrow':'');
  el.style.cssText=page.style.cssText+`width:${width}px;flex:none;box-shadow:none;`;
+ dsClass(el);
  el.innerHTML=pageInner(pg);
  el.querySelectorAll('.ui-only').forEach(n=>n.remove());
  el.querySelectorAll('[contenteditable]').forEach(n=>n.removeAttribute('contenteditable'));
@@ -1361,13 +1467,14 @@ const AIS={
  gemini:{n:'Gemini',out:'Canvas에서 HTML 파일 하나(CSS·JavaScript 포함)로 만들어서 미리보기로 바로 확인할 수 있게 해 줘.',fix:'Canvas의 코드를 고쳐 줘.'},
  tool:{n:'코딩 도구',out:'지금 프로젝트 폴더에 index.html, style.css, script.js 세 파일로 나눠서 만들어 줘. index.html을 브라우저로 열면 바로 동작해야 해.',fix:'필요한 파일만 고쳐 줘.'}
 };
-let popt={ai:'common',mode:'once'};
+let popt={ai:'common',mode:'once',noDesign:(()=>{try{return localStorage.getItem('ws-nodesign')==='1'}catch(_){return false}})()};
 const A3={left:'왼쪽 정렬',center:'가운데 정렬',right:'오른쪽 정렬'};
-const bgName=v=>({white:'흰색',tint:'연한 포인트색',gray:'연회색',accent:'포인트색',dark:'어두운 남색'}[v]||v);
+const bgName=v=>({white:'흰색',tint:getDS().sub?'연한 보조색':'연한 포인트색',gray:'연회색',accent:'포인트색',sub:'보조색',dark:'어두운 남색'}[v]||v);
 const q=s=>`"${String(s).replace(/\n/g,' ')}"`;
 const slug=i=>i===0?'home':'page'+(i+1);
+const DZ=()=>!popt.noDesign;
 function line(b){
- const bgt=b.bg?`, 배경 ${bgName(b.bg)}`:'';
+ const bgt=b.bg&&DZ()?`, 배경 ${bgName(b.bg)}`:'';
  const ph=(src,alt)=>src&&IMGS[src]?`실제 사진(${alt})`:`사진 자리(들어갈 사진: ${alt})`;
  switch(b.type){
   case 'hero':return `히어로 섹션(큰 배너, 높이 ${{s:'낮게',m:'보통',l:'높게'}[b.size]}, ${A3[b.align]}${b.bgsrc&&IMGS[b.bgsrc]?', 배경에 사진을 깔고 어둡게 덮기':bgt}) — 제목 ${q(b.title)}, 설명 ${q(b.sub)}${b.showBtn!==false?`, 버튼 ${q(b.btn)}`:''}`;
@@ -1484,35 +1591,37 @@ function siteSections(stub,fnum){
   if(b.type==='cards'&&b.thumbs!==false)b.items.forEach((c,i)=>chk(b,`items.${i}.src`));
   if(b.type==='gallery')b.items.forEach((c,i)=>chk(b,`items.${i}.src`));
  }));
- const L2=['## 2. 디자인 (함께 붙여 넣은 디자인 이미지를 참고해 줘)',`- 포인트 색: ${S.accent} (버튼, 지금 보고 있는 메뉴, 강조)`,`- 바탕색: ${S.bg}`,`- 글꼴: 제목은 Google Fonts의 "${FONTS[S.hf].g}", 본문은 "${FONTS[S.bf].g}"`,`- 모서리: ${RAD[S.radius].p}`,'- 블록마다 적어 둔 배경색과 여백도 디자인 이미지처럼 맞춰 줘.'];
- if(ph)L2.push('- 디자인 이미지의 회색 상자는 사진이 들어갈 자리야. 적어 둔 설명을 대체 텍스트(alt)로 넣고, 나중에 사진 주소만 바꾸면 되게 해 줘.');
- if(real)L2.push('- 디자인 이미지에 보이는 실제 사진은 내가 넣을 사진이야. 같은 자리에 <img>를 두고 파일 이름은 photo1.jpg처럼 임시로 정해 줘.');
+ const L2=DZ()?['## 2. 디자인 (함께 붙여 넣은 디자인 이미지를 참고해 줘)'].concat(designLines()):['## 2. 디자인 (내가 첨부한 참고 이미지 따르기)','- 색, 글꼴, 모서리, 그림자, 버튼 모양 같은 겉모습은 내가 함께 붙여 넣은 참고 이미지(또는 참고 사이트)를 최대한 비슷하게 따라 줘.','- 참고 이미지에 없는 부분은 같은 분위기로 자연스럽게 맞춰 줘.','- 아래 3~4번은 화면 배치와 기능 기준이야. 배치는 이 설계를 따르고, 겉모습은 참고 이미지를 우선해 줘.'];
+ if(ph)L2.push(DZ()?'- 디자인 이미지의 회색 상자는 사진이 들어갈 자리야. 적어 둔 설명을 대체 텍스트(alt)로 넣고, 나중에 사진 주소만 바꾸면 되게 해 줘.':'- 사진이 들어갈 자리는 적어 둔 설명을 대체 텍스트(alt)로 넣은 상자로 두고, 나중에 사진 주소만 바꾸면 되게 해 줘.');
+ if(real&&DZ())L2.push('- 디자인 이미지에 보이는 실제 사진은 내가 넣을 사진이야. 같은 자리에 <img>를 두고 파일 이름은 photo1.jpg처럼 임시로 정해 줘.');
  out.push(L2.join('\n'));
  // 3. 페이지 구성
  const L3=['## 3. 페이지 구성'];
  if(S.showNav){
   const nv=S.nav, lp=loginPage();
-  if(S.mode==='multi')L3.push(`- 헤더와 내비게이션 바(모든 화면 맨 위에 공통): 왼쪽 로고 ${q(nv.brand)}, 메뉴 ${S.pages.filter(p=>p.inMenu!==false).map(p=>p.name).join(' · ')}${nv.loginBtn?`, 오른쪽 끝에 [로그인] 버튼${lp?`(누르면 [${lp.name}] 페이지로 이동)`:''}`:''}. 지금 보고 있는 페이지의 메뉴는 포인트 색 밑줄로 표시해 줘.`);
+  if(S.mode==='multi')L3.push(`- 헤더와 내비게이션 바(모든 화면 맨 위에 공통): 왼쪽 로고 ${q(nv.brand)}, 메뉴 ${S.pages.filter(p=>p.inMenu!==false).map(p=>p.name).join(' · ')}${nv.loginBtn?`, 오른쪽 끝에 [로그인] 버튼${lp?`(누르면 [${lp.name}] 페이지로 이동)`:''}`:''}. 지금 보고 있는 페이지의 메뉴는 ${DZ()?'포인트 색 밑줄로':'눈에 띄게'} 표시해 줘.`);
   else L3.push(`- 고정 헤더(Sticky Header)와 내비게이션 바: 왼쪽 로고 ${q(nv.brand)}, 메뉴 ${nv.items.join(' · ')}. 각 메뉴를 누르면 이름이 맞는 구역으로 스크롤${nv.loginBtn?'. 오른쪽 끝 [로그인] 버튼을 누르면 로그인 창이 떠':''}.`);
  }
  if(S.mode==='multi'){
   S.pages.forEach((p,i)=>L3.push(`${i+1}. ${p.name} (#${slug(i)})${i===0?' — 첫 화면':''}${p.inMenu===false?' — 메뉴에는 없고 버튼으로 들어가는 페이지':''}: ${p.blocks.map(b=>BN[b.type]).join(' → ')||'빈 페이지'}`));
  }else L3.push(`- 한 페이지 순서: ${S.pages[0].blocks.map(b=>BN[b.type]).join(' → ')||'빈 페이지'}`);
- if(S.showFooter)L3.push(`- 푸터(모든 화면 맨 아래에 공통, 배경 ${bgName(S.footer.bg||'')||'바탕색'}): ${q(S.footer.name)} / ${q(S.footer.info)}${adminPage()?' / 오른쪽 아래 작은 [관리자] 링크(누르면 관리자 페이지)':''}`);
+ if(S.showFooter)L3.push(`- 푸터(모든 화면 맨 아래에 공통${DZ()?`, 배경 ${bgName(S.footer.bg||'')||'바탕색'}`:''}):${q(S.footer.name)} / ${q(S.footer.info)}${adminPage()?' / 오른쪽 아래 작은 [관리자] 링크(누르면 관리자 페이지)':''}`);
  out.push(L3.join('\n'));
  // 4. 화면별 구성
  const L4=['## 4. 화면별 자세한 구성 (위에서 아래 순서)'];
  usedPages().forEach(p=>{
   L4.push('',S.mode==='multi'?`### [${p.name}] 페이지`:'### 페이지 구성');
   if(!p.blocks.length)L4.push('- (아직 비어 있음)');
-  p.blocks.forEach((b,i)=>L4.push(`${i+1}. `+(FEAT[b.type]?`★ 기능 ${fnum.get(b)}: ${BN[b.type]} ${q(b.title)}${stub?` — ${FSPEC[b.type](b).screen.filter(Boolean).join(', ')}. 지금은 화면 모양만 만들고, 동작은 다음 단계에서 추가할 거야.`:' (아래 기능 설명 참고)'}${b.bg?` (배경 ${bgName(b.bg)})`:''}`:line(b))));
+  p.blocks.forEach((b,i)=>L4.push(`${i+1}. `+(FEAT[b.type]?`★ 기능 ${fnum.get(b)}: ${BN[b.type]} ${q(b.title)}${stub?` — ${FSPEC[b.type](b).screen.filter(Boolean).join(', ')}. 지금은 화면 모양만 만들고, 동작은 다음 단계에서 추가할 거야.`:' (아래 기능 설명 참고)'}${b.bg&&DZ()?` (배경 ${bgName(b.bg)})`:''}`:line(b))));
  });
  out.push(L4.join('\n'));
  return out;
 }
 function buildPrompts(){
  const ai=AIS[popt.ai], fs=featList(), fnum=new Map(); fs.forEach((f,i)=>fnum.set(f.b,i+1));
- const intro=`너는 초보자를 친절하게 돕는 웹 개발자야. 아래 설계서와 함께 붙여 넣은 디자인 이미지를 보고 "${S.name||'내 웹사이트'}" 웹사이트를 만들어 줘. ${ai.out}`;
+ const intro=DZ()
+  ?`너는 초보자를 친절하게 돕는 웹 개발자야. 아래 설계서와 함께 붙여 넣은 디자인 이미지를 보고 "${S.name||'내 웹사이트'}" 웹사이트를 만들어 줘. ${ai.out}`
+  :`너는 초보자를 친절하게 돕는 웹 개발자야. 아래 설계서의 구조와 기능대로 "${S.name||'내 웹사이트'}" 웹사이트를 만들어 줘. 디자인(색, 글꼴, 분위기)은 내가 따로 붙여 넣은 참고 이미지를 따라 줘. ${ai.out}`;
  const privacy='- 실제 학생 이름·연락처 같은 개인정보는 넣지 말고 가짜 샘플 데이터로 채워 줘.';
  if(popt.mode==='once'){
   const parts=[intro].concat(siteSections(false,fnum));
@@ -1541,13 +1650,14 @@ function buildPrompts(){
 }
 let curPrompts=[];
 function promptTop(){
- return `<div class="popt"><div><span class="pl">사용할 AI</span><div class="seg mini">${Object.keys(AIS).map(k=>`<button type="button" data-pai="${k}" class="${popt.ai===k?'on':''}">${AIS[k].n}</button>`).join('')}</div></div><div><span class="pl">방식</span><div class="seg mini"><button type="button" data-pmode="once" class="${popt.mode==='once'?'on':''}">한 번에</button><button type="button" data-pmode="steps" class="${popt.mode==='steps'?'on':''}">단계별로</button></div></div><div><span class="pl">실시간 연동</span><div class="seg mini"><button type="button" data-psync="firebase" class="${isFb()?'on':''}">Firebase 필수</button><button type="button" data-psync="demo" class="${isFb()?'':'on'}">끄기 (시연용)</button></div></div></div>`;
+ return `<div class="popt"><div><span class="pl">사용할 AI</span><div class="seg mini">${Object.keys(AIS).map(k=>`<button type="button" data-pai="${k}" class="${popt.ai===k?'on':''}">${AIS[k].n}</button>`).join('')}</div></div><div><span class="pl">방식</span><div class="seg mini"><button type="button" data-pmode="once" class="${popt.mode==='once'?'on':''}">한 번에</button><button type="button" data-pmode="steps" class="${popt.mode==='steps'?'on':''}">단계별로</button></div></div><div><span class="pl">실시간 연동</span><div class="seg mini"><button type="button" data-psync="firebase" class="${isFb()?'on':''}">Firebase 필수</button><button type="button" data-psync="demo" class="${isFb()?'':'on'}">끄기 (시연용)</button></div></div><label class="pchk" title="선생님이 따로 고른 참고 이미지(또는 참고 사이트)를 쓸 때 켜세요"><input type="checkbox" id="pNoDesign" ${popt.noDesign?'checked':''}><span>디자인 참고 빼기</span><small>내 참고 이미지를 따로 쓸게요</small></label></div>`;
 }
 function promptBody(){
  curPrompts=buildPrompts();
  return `<div class="plist ${popt.mode==='once'?'one':'steps'}">${curPrompts.map((p,i)=>`<div class="pcard"><div class="pch"><b>${esc(p.t)}</b><button class="ub" type="button" data-pcopy="${i}">${ico('copy',15)}복사</button></div><textarea id="pt${i}" readonly aria-label="${esc(p.t)}">${esc(p.v)}</textarea></div>`).join('')}</div>`;
 }
-const promptHint=()=>({common:'어떤 AI 채팅에도 붙여 넣을 수 있는 공통 문장이에요.',claude:'Claude에서 아티팩트로 바로 미리보기 할 수 있게 요청해요.',chatgpt:'ChatGPT 캔버스에서 미리보기 할 수 있게 요청해요.',gemini:'Gemini Canvas에서 미리보기 할 수 있게 요청해요.',tool:'Cursor, Claude Code 같은 코딩 도구용이에요. 파일을 나눠 만들어 달라고 요청해요.'}[popt.ai])+(popt.mode==='steps'?' 단계별로 하면 한 번에 하나씩 확인하면서 고칠 수 있어서 결과가 더 안정적이에요.':' 디자인 이미지도 함께 붙여 넣으면 결과가 더 정확해져요.')+
+const promptHint=()=>({common:'어떤 AI 채팅에도 붙여 넣을 수 있는 공통 문장이에요.',claude:'Claude에서 아티팩트로 바로 미리보기 할 수 있게 요청해요.',chatgpt:'ChatGPT 캔버스에서 미리보기 할 수 있게 요청해요.',gemini:'Gemini Canvas에서 미리보기 할 수 있게 요청해요.',tool:'Cursor, Claude Code 같은 코딩 도구용이에요. 파일을 나눠 만들어 달라고 요청해요.'}[popt.ai])+(popt.mode==='steps'?' 단계별로 하면 한 번에 하나씩 확인하면서 고칠 수 있어서 결과가 더 안정적이에요.':'')+
+ (popt.noDesign?' 디자인 지시를 뺐어요. AI에 프롬프트와 함께 내 참고 이미지를 꼭 붙여 넣으세요.':(popt.mode==='steps'?'':' 디자인 이미지도 함께 붙여 넣으면 결과가 더 정확해져요.'))+
  (isFb()?(sharedOf(featList()).length?' 실시간 연동이 필수 조건으로 들어가요.':' [모두 함께] 저장하는 기능이 없어서 실시간 연동은 들어가지 않아요.'):'');
 function openPrompt(){
  const has=usedPages().some(p=>p.blocks.length);
@@ -1562,6 +1672,9 @@ function refreshPrompt(){
 }
 $('#prompt').addEventListener('click',openPrompt);
 
+$('#modal').addEventListener('change',e=>{
+ if(e.target.id==='pNoDesign'){popt.noDesign=e.target.checked;try{localStorage.setItem('ws-nodesign',popt.noDesign?'1':'')}catch(_){}refreshPrompt();toast(popt.noDesign?'디자인 지시를 뺐어요. 참고 이미지를 프롬프트와 함께 붙여 넣으세요.':'웹 스케치북에서 정한 디자인을 다시 넣었어요.')}
+});
 $('#modal').addEventListener('click',async e=>{
  if(e.target.classList.contains('ovl')||e.target.closest('[data-close]')){closeModal();return}
  const ai=e.target.closest('[data-pai]'); if(ai){popt.ai=ai.dataset.pai;refreshPrompt();return}
@@ -1741,7 +1854,7 @@ function pvNav(pg){
 function pvRender(top){
  if(!PV)return;
  const body=$('#pvBody'),pg=pvPage(),el=$('#pvPage'),st=body.scrollTop;
- el.style.cssText=page.style.cssText;
+ el.style.cssText=page.style.cssText; dsClass(el);
  let h=S.showNav?pvNav(pg):'';
  pg.blocks.forEach(b=>{h+=`<section class="blk t-${b.type}" data-bid="${b.id}" style="${blockStyle(b)}">${PVB[b.type]?PVB[b.type](b,rtOf(b)):pvContent(b,pg)}</section>`});
  if(!pg.blocks.length)h+='<div class="empty2" style="padding:90px 20px">이 페이지는 아직 비어 있어요.</div>';
@@ -1937,7 +2050,7 @@ const wzRoot=$('#wzRoot');
 let WZ=null;
 function openWizard(){
  if(typeof closePreview==='function')closePreview(); closeModal();
- WZ={step:0,who:null,feats:FW.map(f=>({k:f.k,on:true})),skip:false,info:{notice:true,timetable:true,calendar:true},home:['hero','notice','links'],admin:['pw','perms','moderate'],admTouched:false,pw:'0000',name:'',intro:'',accent:'#3b5bdb'};
+ WZ={step:0,who:null,feats:FW.map(f=>({k:f.k,on:true})),skip:false,info:{notice:true,timetable:true,calendar:true},home:['hero','notice','links'],admin:['pw','perms','moderate'],admTouched:false,pw:'0000',name:'',intro:'',accent:'#3b5bdb',theme:'clean'};
  wzRender();
 }
 function closeWizard(){WZ=null;wzRoot.innerHTML=''}
@@ -1977,6 +2090,7 @@ const WQ=[
  ()=>`<div><span class="wz-k">마지막</span><h2>사이트 이름을 지어 주세요</h2><p class="lead">이름과 소개 한 줄은 헤더, 환영 배너, 프롬프트에 그대로 들어가요.</p></div>
   <div class="wz-fields"><label>사이트 이름<input class="tin" data-wf="name" value="${esc(WZ.name)}" placeholder="예: 5학년 4반 홈페이지" maxlength="30" autocomplete="off"></label>
   <label>소개 한 줄<input class="tin" data-wf="intro" value="${esc(WZ.intro)}" placeholder="예: 매일 한 뼘씩 자라는 우리 반 이야기" maxlength="60" autocomplete="off"></label>
+  <label>디자인 테마 <span style="font-weight:400">(나중에 [디자인] 탭에서 세밀하게 바꿀 수 있어요)</span><div class="themes wz-themes">${THEMES.map(t=>themeThumb(t,WZ.theme===t.id,`data-w="theme" data-v="${t.id}"`)).join('')}</div></label>
   <label>포인트 색<div class="sws">${ACCENTS.slice(0,6).map(a=>`<button type="button" class="sw ${WZ.accent===a[0]?'on':''}" data-w="acc" data-v="${a[0]}" style="--c:${a[0]}" title="${a[1]}" aria-label="${a[1]}"></button>`).join('')}</div></label></div>`
 ];
 function wzRender(){
@@ -1993,7 +2107,9 @@ function buildSite(w){
  const s=site0(), name=(w.name||'').trim()||'우리 반 홈페이지', brand=name.replace(/\s*홈페이지$/,'')||name, intro=(w.intro||'').trim();
  const feats=wzFeats(), H=k=>w.home.indexOf(k)>=0, has=k=>feats.some(f=>f.k===k);
  Object.assign(s,{name:name,purpose:intro||(w.who==='solo'?'선생님이 학급 정보를 정리해 두는 홈페이지':'우리 반 소식을 나누고 함께 의견을 모으는 학급 홈페이지'),audience:w.who==='solo'?'담임 선생님(나 혼자)':'우리 반 학생들과 담임 선생님',who:w.who||'class',sync:w.who==='solo'?'demo':'firebase',accent:w.accent,mode:'multi',addMode:'page'});
- s.nav=mk('nav',{brand:brand,items:['홈'],loginBtn:has('login')});
+ const th=THEMES.find(x=>x.id===(w.theme||'clean'))||THEMES[0];
+ Object.assign(s,{bg:th.bg,hf:th.hf,bf:th.bf,theme:w.accent===th.accent?th.id:''}); s.ds=Object.assign({},th.ds);
+ s.nav=mk('nav',{brand:brand,items:['홈'],loginBtn:has('login'),bg:th.navBg});
  s.footer=mk('footer',{name:brand,info:intro||'우리 반 홈페이지에 와 줘서 고마워요.'});
  const home=[];
  if(H('hero'))home.push(mk('hero',{title:name,sub:intro||'매일 한 뼘씩 자라는 우리 반 이야기를 모았어요.',showBtn:false,size:'m'}));
@@ -2032,6 +2148,7 @@ wzRoot.addEventListener('click',e=>{
   case 'adm':{WZ.admTouched=true;const k=WZ.admin.indexOf(v);if(k>=0)WZ.admin.splice(k,1);else WZ.admin.push(v);break}
   case 'noadmin':WZ.admTouched=true;WZ.admin=[];break;
   case 'acc':WZ.accent=v;break;
+  case 'theme':{const t=THEMES.find(x=>x.id===v);WZ.theme=v;if(t)WZ.accent=t.accent;break}
   case 'skipall':S=TPL.start();IMGS={};selId=null;tab='block';closeWizard();commit();scroller.scrollTop=0;renderAll();toast('홈만 있는 사이트로 시작해요. 리본의 학급 기능으로 하나씩 더해 보세요.');return;
   case 'make':{const fn=wzFeats().length;S=buildSite(WZ);IMGS={};selId=null;tab='block';closeWizard();commit();scroller.scrollTop=0;renderAll();
    toast(`페이지 ${S.pages.length}개를 만들었어요. 이제 블록을 눌러 세부 설정을 하고, [미리보기]로 써 보세요.`+(fn?'':' 기능은 리본에서 추가해요.'));return}
